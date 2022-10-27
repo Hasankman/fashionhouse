@@ -7,16 +7,16 @@ import com.example.domain.Product;
 
 public class ProductCategoryDTO {
 	
-	private int prodCatId;
+	private Integer prodCatId;
 	
-	private String prodCatDesc;
+	private String prodcatdesc;
 	
 	private List<Product> products = new ArrayList<>();
 
-	public ProductCategoryDTO(int prodCatId, String prodCatDesc, List<Product> products) {
+	public ProductCategoryDTO(Integer prodCatId, String prodcatdesc, List<Product> products) {
 		super();
 		this.prodCatId = prodCatId;
-		this.prodCatDesc = prodCatDesc;
+		this.prodcatdesc = prodcatdesc;
 		this.products = products;
 	}
 
@@ -26,24 +26,24 @@ public class ProductCategoryDTO {
 
 	@Override
 	public String toString() {
-		return "ProductCategoryDTO [prodCatId=" + prodCatId + ", prodCatDesc=" + prodCatDesc + ", products=" + products
+		return "ProductCategorysDTO [prodCatId=" + prodCatId + ", prodcatdesc=" + prodcatdesc + ", products=" + products
 				+ "]";
 	}
 
-	public int getProdCatId() {
+	public Integer getProdCatId() {
 		return prodCatId;
 	}
 
-	public void setProdCatId(int prodCatId) {
+	public void setProdCatId(Integer prodCatId) {
 		this.prodCatId = prodCatId;
 	}
 
-	public String getProdCatDesc() {
-		return prodCatDesc;
+	public String getProdcatdesc() {
+		return prodcatdesc;
 	}
 
-	public void setProdCatDesc(String prodCatDesc) {
-		this.prodCatDesc = prodCatDesc;
+	public void setProdcatdesc(String prodcatdesc) {
+		this.prodcatdesc = prodcatdesc;
 	}
 
 	public List<Product> getProducts() {
@@ -53,6 +53,7 @@ public class ProductCategoryDTO {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
+
 	
 	
 }

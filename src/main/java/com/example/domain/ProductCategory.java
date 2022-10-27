@@ -21,20 +21,19 @@ public class ProductCategory {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int prodCatId;
+	private Integer prodCatId;
 	
-	private String prodCatDesc;
+	private String prodcatdesc;
 	
-	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "productcategory", fetch = FetchType.EAGER)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	//@JsonManagedReference
 	@JsonIgnore
 	private List<Product> products = new ArrayList<>();
 
-	public ProductCategory(int prodCatId, String prodCatDesc, List<Product> products) {
+	public ProductCategory(Integer prodCatId, String prodcatdesc, List<Product> products) {
 		super();
 		this.prodCatId = prodCatId;
-		this.prodCatDesc = prodCatDesc;
+		this.prodcatdesc = prodcatdesc;
 		this.products = products;
 	}
 
@@ -44,24 +43,24 @@ public class ProductCategory {
 
 	@Override
 	public String toString() {
-		return "ProductCategory [prodCatId=" + prodCatId + ", prodCatDesc=" + prodCatDesc + ", products=" + products
+		return "ProductCategory [prodCatId=" + prodCatId + ", prodcatdesc=" + prodcatdesc + ", products=" + products
 				+ "]";
 	}
 
-	public int getProdCatId() {
+	public Integer getProdCatId() {
 		return prodCatId;
 	}
 
-	public void setProdCatId(int prodCatId) {
+	public void setProdCatId(Integer prodCatId) {
 		this.prodCatId = prodCatId;
 	}
 
-	public String getProdCatDesc() {
-		return prodCatDesc;
+	public String getProdcatdesc() {
+		return prodcatdesc;
 	}
 
-	public void setProdCatDesc(String prodCatDesc) {
-		this.prodCatDesc = prodCatDesc;
+	public void setProdcatdesc(String prodcatdesc) {
+		this.prodcatdesc = prodcatdesc;
 	}
 
 	public List<Product> getProducts() {
@@ -71,7 +70,5 @@ public class ProductCategory {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-	
-	
 	
 }

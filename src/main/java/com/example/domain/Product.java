@@ -16,33 +16,34 @@ public class Product {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int	productId;
+	private Integer	productId;
 	
 	@NotNull
     @Size(min = 0, max = 100)
 	private String productName;
 	
-	@Min(0)
-	@Max(12)//I have created a maximum UK size that our fashion house produces
+//	@Min(0)
+//	@Max(13)//I have created a maximum UK size that our fashion house produces
 	private String productSize ;
 	 
 	@NotNull// All products should have a 
 	private Float productPrice;
 	
-	private int productQuantity;
+	private Integer productQuantity;
 	
 	@ManyToOne
-	private String prodCatDesc;
+	private ProductCategory productcategory;
 
-	public Product(int productId, @NotNull @Size(min = 0, max = 100) String productName,
-			@Min(0) @Max(12) String productSize, @NotNull Float productPrice, int productQuantity, String prodCatDesc) {
+	public Product(Integer productId, @NotNull @Size(min = 0, max = 100) String productName,
+			@Min(0) @Max(12) String productSize, @NotNull Float productPrice, Integer productQuantity,
+			ProductCategory productcategory) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.productSize = productSize;
 		this.productPrice = productPrice;
 		this.productQuantity = productQuantity;
-		this.prodCatDesc = prodCatDesc;
+		this.productcategory = productcategory;
 	}
 
 	public Product() {
@@ -52,15 +53,15 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", productSize=" + productSize
-				+ ", productPrice=" + productPrice + ", productQuantity=" + productQuantity + ", prodCatDesc="
-				+ prodCatDesc + "]";
+				+ ", productPrice=" + productPrice + ", productQuantity=" + productQuantity + ", productcategory="
+				+ productcategory + "]";
 	}
 
-	public int getProductId() {
+	public Integer getProductId() {
 		return productId;
 	}
 
-	public void setProductId(int productId) {
+	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
 
@@ -88,22 +89,23 @@ public class Product {
 		this.productPrice = productPrice;
 	}
 
-	public int getProductQuantity() {
+	public Integer getProductQuantity() {
 		return productQuantity;
 	}
 
-	public void setProductQuantity(int productQuantity) {
+	public void setProductQuantity(Integer productQuantity) {
 		this.productQuantity = productQuantity;
 	}
 
-	public String getProdCatDesc() {
-		return prodCatDesc;
+	public ProductCategory getProductcategory() {
+		return productcategory;
 	}
 
-	public void setProdCatDesc(String prodCatDesc) {
-		this.prodCatDesc = prodCatDesc;
-	};
-	
+	public void setProductcategory(ProductCategory productcategory) {
+		this.productcategory = productcategory;
+	}
+
 	
 
+	
 }

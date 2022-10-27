@@ -1,6 +1,8 @@
 package com.example.service;
 
 import java.util.List;
+
+
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -10,16 +12,18 @@ import org.springframework.stereotype.Service;
 
 import com.example.domain.ProductCategory;
 import com.example.dto.ProductCategoryDTO;
-import com.example.exception.BandNotFoundException;
-import com.example.rest.dto.BandDTO;
+import com.example.exception.ProductCategoryNotFoundException;
+import com.example.repository.ProductCategoryRepository;
 
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class ProductCategoryService {
+public class ProductCategorysService {
+	
 	@Autowired
-	private ProductCategory repo;
+	private ProductCategoryRepository repo;
+	
 	@Autowired
 	private ModelMapper mapper;
 	
@@ -37,10 +41,11 @@ public class ProductCategoryService {
 	}
 	
 	public ProductCategoryDTO updateProductCategory(Integer id, ProductCategory productcategory) {
-		Optional<ProductCategory> tempProductCategory = Optional.of(this.repo.findById(id).orElseThrows(ProductCategoryNotFoundException::new));
+		Optional<ProductCategory> tempProductCategory = Optional.of(this.repo.findById(id).orElseThrow(ProductCategoryNotFoundException::new));
 	
 		ProductCategory existing = tempProductCategory.get();
-		existing.setProdCatDesc(productcategory.getProdCatDesc());
+		existing.setProdCatId(productcategory.getProdCatId());
+		existing.setProdcatdesc(productcategory.getProdcatdesc());
 		existing.setProducts(productcategory.getProducts());
 		
 		ProductCategory updated = this.repo.save(existing);
@@ -48,13 +53,22 @@ public class ProductCategoryService {
 	
 	}
 	
-	public boolean deleteProductCategory()
+	public boolean deleteProductCategory(Integer id) {
+		this.repo.findById(id).orElseThrow(ProductCategoryNotFoundException::new);
+		this.repo.deleteById(id);
+		boolean exists = this.repo.existsById(id);
+		return !exists;
+	}
 	
 	public ProductCategoryDTO readById(Integer id) {
-		ProductCategory found = this.repo.findById(id).orElseThrow(ProductCategoryNotFoundException::new));
+		ProductCategory found =  this.repo.findById(id).orElseThrow(ProductCategoryNotFoundException::new);
 		return this.mapToDTO(found);
 	}
 	
+	public ProductCategoryDTO readByName(String name) {
+		ProductCategory  found = this.repo.productCatByName(name).orElseThrow(ProductCategoryNotFoundException::new);
+		return this.mapToDTO(found);
+	}
 }
 
 

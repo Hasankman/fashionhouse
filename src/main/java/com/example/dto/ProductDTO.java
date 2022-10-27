@@ -1,22 +1,27 @@
 package com.example.dto;
 
+import com.example.domain.ProductCategory;
+
+
+
+
 public class ProductDTO {
-	private int	productId;
+	private Integer	productId;
 	private String productName;
 	private String productSize ;
 	private Float productPrice;
-	private int productQuantity;
-	private String prodCatDesc;
+	private Integer productQuantity;
+	private ProductCategory productcategory;
 	
-	public ProductDTO(int productId, String productName, String productSize, Float productPrice, int productQuantity,
-			String prodCatDesc) {
+	public ProductDTO(Integer productId, String productName, String productSize, Float productPrice,
+			Integer productQuantity, ProductCategory productcategory) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.productSize = productSize;
 		this.productPrice = productPrice;
 		this.productQuantity = productQuantity;
-		this.prodCatDesc = prodCatDesc;
+		this.productcategory = productcategory;
 	}
 
 	public ProductDTO() {
@@ -26,15 +31,15 @@ public class ProductDTO {
 	@Override
 	public String toString() {
 		return "ProductDTO [productId=" + productId + ", productName=" + productName + ", productSize=" + productSize
-				+ ", productPrice=" + productPrice + ", productQuantity=" + productQuantity + ", prodCatDesc="
-				+ prodCatDesc + "]";
+				+ ", productPrice=" + productPrice + ", productQuantity=" + productQuantity + ", productcategory="
+				+ productcategory + "]";
 	}
 
-	public int getProductId() {
+	public Integer getProductId() {
 		return productId;
 	}
 
-	public void setProductId(int productId) {
+	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
 
@@ -62,21 +67,23 @@ public class ProductDTO {
 		this.productPrice = productPrice;
 	}
 
-	public int getProductQuantity() {
+	public Integer getProductQuantity() {
 		return productQuantity;
 	}
 
-	public void setProductQuantity(int productQuantity) {
+	public void setProductQuantity(Integer productQuantity) {
 		this.productQuantity = productQuantity;
 	}
 
-	public String getProdCatDesc() {
-		return prodCatDesc;
+	public ProductCategory getProductcategory() {
+		return productcategory;
 	}
 
-	public void setProdCatDesc(String prodCatDesc) {
-		this.prodCatDesc = prodCatDesc;
+	public void setProductcategory(ProductCategory productcategory) {
+		this.productcategory = productcategory;
 	}
+	
+	
 	
 	
 }
