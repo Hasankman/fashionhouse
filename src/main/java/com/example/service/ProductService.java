@@ -45,7 +45,6 @@ public class ProductService {
 		Optional<Product> tempProduct = Optional.of(this.repo.findById(id)).orElseThrow(ProductNotFoundException::new);
 		Product existing = tempProduct.get();
 		
-		existing.setProductId(product.getProductId());
 		existing.setProductName(product.getProductName());
 		existing.setProductColour(product.getProductColour());
 		existing.setProductSize(product.getProductSize());
