@@ -47,6 +47,7 @@ public class ProductService {
 		
 		existing.setProductId(product.getProductId());
 		existing.setProductName(product.getProductName());
+		existing.setProductColour(product.getProductColour());
 		existing.setProductSize(product.getProductSize());
 		existing.setProductPrice(product.getProductPrice());
 		existing.setProductQuantity(product.getProductQuantity());
@@ -72,4 +73,15 @@ public class ProductService {
 		List<Product> found = this.repo.productByName(name).orElseThrow(ProductNotFoundException::new);
 		return found.stream().map(this::mapToDTO).collect(Collectors.toList());
 	}
+	
+	public List<ProductDTO> readBySize(String Size) {
+		List<Product> found = this.repo.productBySize(Size).orElseThrow(ProductNotFoundException::new);
+		return found.stream().map(this::mapToDTO).collect(Collectors.toList());
+	}
+	
+	public List<ProductDTO> readByColour(String Colour) {
+		List<Product> found = this.repo.productByColour(Colour).orElseThrow(ProductNotFoundException::new);
+		return found.stream().map(this::mapToDTO).collect(Collectors.toList());
+	}
+	
 }

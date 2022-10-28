@@ -5,6 +5,8 @@ import java.util.List;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,19 +28,19 @@ public class ProductController {
 	@Autowired
 	private ProductService service;
 	
-	@PostMapping("addProducts")
+	@PostMapping("/addProducts")
 	public ProductDTO addProduct(@RequestBody Product product) {
-		return service.addProduct(product);
+		return service.addProduct(product);// must add http statuses to this code ***************
 	}
 	
-	@GetMapping("allProducts")
+	@GetMapping("/allProducts")
 	public List<ProductDTO> getAllProducts() {
 		return service.getAllProducts();
 	}
 	
 	@PutMapping("/updateProduct/{id}")
 	public ProductDTO updateProduct(@PathVariable Integer id, @RequestBody Product product) {
-	return service.updateProduct(id, product);
+	return service.updateProduct(id, product);// must add http statuses to this code ***************
 	}
 	
 	@DeleteMapping("/deleteProduct/{id}")
@@ -47,13 +49,23 @@ public class ProductController {
 	}
 	
 	@GetMapping("/productById")
-	public ProductDTO readProductById(@PathParam("id") Integer id) {
-		return service.readProductById(id);
+	public ProductDTO readProductById(@PathParam("id") Integer productId) {
+		return service.readProductById(productId);
 	}
 	
 	@GetMapping("/productByName")
-	public List<ProductDTO> readProductByName(@PathParam("name") String name) {
-		return service.readByName(name);
+	public List<ProductDTO> readProductByName(@PathParam("name") String productName) {
+		return service.readByName(productName);
+	}
+	
+	@GetMapping("/productBySize")
+	public List<ProductDTO> readProductBySize(@PathParam("size") String productSize) {
+		return service.readBySize(productSize);
+	}
+	
+	@GetMapping("/productByColour")
+	public List<ProductDTO> readProductByColour(@PathParam("colour") String productColour) {
+		return service.readByColour(productColour);
 	}
 	
 }

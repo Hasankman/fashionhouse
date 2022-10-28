@@ -44,7 +44,6 @@ public class ProductCategorysService {
 		Optional<ProductCategory> tempProductCategory = Optional.of(this.repo.findById(id).orElseThrow(ProductCategoryNotFoundException::new));
 	
 		ProductCategory existing = tempProductCategory.get();
-		existing.setProdCatId(productcategory.getProdCatId());
 		existing.setProdcatdesc(productcategory.getProdcatdesc());
 		existing.setProducts(productcategory.getProducts());
 		

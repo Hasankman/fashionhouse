@@ -16,6 +16,9 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 	@Query("select y from Product y where y.productName=?1")
 	Optional<List<Product>> productByName(String productName);
 
+	@Query("select z from Product z where z.productSize=?1")
+	Optional<List<Product>> productBySize(String productSize);
 	
-	
+	@Query("select c from Product c where c.productColour=?1")
+	Optional<List<Product>> productByColour(String productColour);
 }

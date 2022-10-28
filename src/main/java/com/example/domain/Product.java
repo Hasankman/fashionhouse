@@ -22,8 +22,10 @@ public class Product {
     @Size(min = 0, max = 100)
 	private String productName;
 	
+	private String productColour;
+	
 //	@Min(0)
-//	@Max(13)//I have created a maximum UK size that our fashion house produces
+//	@Max(13)//I have created a maximum UK size that for a future change to an Integer value for our fashion house products
 	private String productSize ;
 	 
 	@NotNull// All products should have a 
@@ -34,12 +36,12 @@ public class Product {
 	@ManyToOne
 	private ProductCategory productcategory;
 
-	public Product(Integer productId, @NotNull @Size(min = 0, max = 100) String productName,
-			@Min(0) @Max(12) String productSize, @NotNull Float productPrice, Integer productQuantity,
-			ProductCategory productcategory) {
+	public Product(Integer productId, @NotNull @Size(min = 0, max = 100) String productName, String productColour,
+			String productSize, @NotNull Float productPrice, Integer productQuantity, ProductCategory productcategory) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
+		this.productColour = productColour;
 		this.productSize = productSize;
 		this.productPrice = productPrice;
 		this.productQuantity = productQuantity;
@@ -52,9 +54,9 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [productId=" + productId + ", productName=" + productName + ", productSize=" + productSize
-				+ ", productPrice=" + productPrice + ", productQuantity=" + productQuantity + ", productcategory="
-				+ productcategory + "]";
+		return "Product [productId=" + productId + ", productName=" + productName + ", productColour=" + productColour
+				+ ", productSize=" + productSize + ", productPrice=" + productPrice + ", productQuantity="
+				+ productQuantity + ", productcategory=" + productcategory + "]";
 	}
 
 	public Integer getProductId() {
@@ -71,6 +73,14 @@ public class Product {
 
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+
+	public String getProductColour() {
+		return productColour;
+	}
+
+	public void setProductColour(String productColour) {
+		this.productColour = productColour;
 	}
 
 	public String getProductSize() {
@@ -104,8 +114,6 @@ public class Product {
 	public void setProductcategory(ProductCategory productcategory) {
 		this.productcategory = productcategory;
 	}
-
-	
 
 	
 }
