@@ -21,12 +21,20 @@ By Hasan Esat Kayman
  # Tools Used:
   
   To create this project i have used the following tools to run my application.
-  
+ 
   * The STS IDE made managing imports, debugging my code and refactoring substantially easier.
   * We used Maven to manage most of the dependancies of my application.
   * We used Junit to run our Tests.
   * We used MySQL workbench to create a local database.
   * We used Postman to test the back end funcuality of my application without using a front end.
+
+# Planing of my Backend:
+
+I planned out how i should have my tabels and how they should be joined and the data that should be stored in the tabels on excell before i started the project.
+
+<p align="center">
+	        <img src="images/Screenshot 2022-10-29 at 04.00.41.png" width="410">
+</p> 
   
   
   
@@ -55,6 +63,18 @@ By Hasan Esat Kayman
   
 <p align="center">
 	        <img src="images/ERD diagram .png" width="410">
+</p> 
+
+# Suceesfull Execution
+
+my application runs sucessfully and with tabels created
+
+<p align="center">
+	        <img src="images/Succesfull Running Application.png" width="410">
+</p> 
+
+<p align="center">
+	        <img src="images/Database Tabels.png" width="410">
 </p> 
   
 # Product Category:
@@ -192,3 +212,16 @@ We could view our products by its Colour which will display every product in tha
 	        <img src="images/ProductControllerTest.png" width="1180">
 </p>  
         
+# Steps to run:
+
+ * The Application runs on Java version 8.
+ * The application runs on port 8080 the port must not be in use.
+ * Local MySQL must exist on port 3306.
+ * You must conect to the databace with username and password decleared.
+ * In addition you must have a database called Fashion House.
+ * The user must run FashinHouseAplication.Java as a spring boot application.
+ * The user must also use postman to (CRUD Operations) interact with the aplication without a frontend.
+
+# What I learned:
+
+I learned how a backend of an application is developed and how we could use Postman to see how the application will function without a frontend and how we could make sure that the backend is functional and the code runes as we would want it to. Also i have learned how java comunicates with a database when an application is running how data is being fetched and presented for the use of a user when called. I will work on my tests to make sure they run successfully because they should not fail because my application works suceesfull and every CRUD Operation works succesfully. I have also learned how we could realate data to one to another and have relations between the tabels.
