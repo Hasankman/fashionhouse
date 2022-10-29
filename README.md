@@ -2,21 +2,62 @@
 
 By Hasan Esat Kayman 
 
-### Introduction
+# Introduction
 
   I have created a Fashion House of BackEnd system, created using Java Spring Boot, PostMan and MySQL. My project will be futher developed and linked to front end to fully function for user interaction and the transfer of data from the the database of products and meet the  needs of the Fashion House. I have created varios Crud operations like (Create, Read, Update, Delete and read by a certain statment like Name or Id or Size) the operations will help us understand how the front end will comunicate with our database and how certian operations would work. i have created two tabels as a start which will be futher developed by adding customers and a size tabel when we take our business global. This READ ME file is a breife intorduction of my project and how my project is functioning so far.
   
-  ### Features of my Fashion House Project
+# Features of my Fashion House Project
   
-  #### Fashion House Structure:
+  * Creating new products and product categories 
+  * Updating products and product categories
+  * Deleting products and product categories
+  * Viewing products by Id
+  * Viewing products by Name 
+  * Viewing products by Size
+  * Viewing products by Colour
+  * Viewing products catageory by Id
+  * Viewing products catageory by Name
+
+ # Tools Used:
+  
+  To create this project i have used the following tools to run my application.
+  
+  * The STS IDE made managing imports, debugging my code and refactoring substantially easier.
+  * We used Maven to manage most of the dependancies of my application.
+  * We used Junit to run our Tests.
+  * We used MySQL workbench to create a local database.
+  * We used Postman to test the back end funcuality of my application without using a front end.
+  
+  
+  
+ # Fashion House Structure:
   
   * I have created a folder structure that will sperate the document depnding on their uses so all repositorys will be in one package and all controllers     will be in a single package. 
   
- <p align="center">
+<p align="center">
 	        <img src="images/Folder Structure.png" width="410">
 </p> 
+
+<p align="center">
+	        <img src="images/Folder and Class Structure.png" width="410">
+</p> 
+
+<p align="center">
+	        <img src="images/Folder and Class Structure 2.png" width="410">
+</p> 
   
-  #### Product Category:
+  
+  
+  
+# Entity Relationships
+  
+  I have illustrated below an ERD diagram showing the relationship between the tabels.
+  
+<p align="center">
+	        <img src="images/ERD diagram .png" width="410">
+</p> 
+  
+# Product Category:
         
         
 * Add Product Category
@@ -67,7 +108,7 @@ We could also view Product Categorys by the given names like Dress or Tops which
 	        <img src="images/viewByProdCatDesc.png" width="1180">
 </p>
   
-  #### Products:
+# Products:
   
         
 * Add Product 
@@ -134,10 +175,20 @@ We could view our products by its Colour which will display every product in tha
 	        <img src="images/viewByProductColour.png" width="1180">
 </p>  
   
+# Application Tests :
   
+  I have test my applications and they have failed however i am going to develop it futher to make sure it is working and all tests pass i need to figure   out how the relation 
   
-  
-  
-  
-  
+ 
+<p align="center">
+	        <img src="images/Fashion House Application.png" width="1180">
+</p>  
+
+<p align="center">
+	        <img src="images/ProductTest.png" width="1180">
+</p>  
+
+<p align="center">
+	        <img src="images/ProductControllerTest.png" width="1180">
+</p>  
         
